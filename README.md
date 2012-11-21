@@ -1,5 +1,5 @@
-# HTML and CSS code guide
-Standards for developing flexible, durable, and sustainable HTML and CSS.
+# HTML与CSS代码规范
+为开发灵活、健壮、连贯的HTML以及CSS而制定的标准
 
 
 
@@ -7,26 +7,26 @@ Standards for developing flexible, durable, and sustainable HTML and CSS.
 
 
 
-## Table of contents
+## 内容目录
 
-* [Golden rule](#golden-rule)
+* [黄金准则](#黄金准则)
 * [HTML](#html)
-  * [Syntax](#html-syntax)
-  * [HTML5 doctype](#html5-doctype)
-  * [Pragmatism over semantics](#pragmatism-over-semantics)
-  * [Attribute order](#attribute-order)
-  * [JavaScript generated markup](#javascript-generated markup)
+  * [HTML规则](#HTML规则)
+  * [HTML5文档类型](#HTML5文档类型)
+  * [实用语义](#实用语义)
+  * [属性顺序](#属性顺序)
+  * [JavaScript生成标签](#JavaScript生成标签)
 * [CSS](#css)
-  * [CSS syntax](#css-syntax)
-  * [Declaration order](#declaration-order)
-  * [Formatting exceptions](#formatting-exceptions)
-    * [Prefixed properties](#prefixed-properties)
-    * [Rules with single declarations](#rules-with-single-declarations)
-  * [Human readable](#human-readable)
-    * [Comments](#comments)
-    * [Classes](#classes)
-    * [Selectors](#selectors)
-  * [Organization](#organization)
+  * [CSS规则](#CSS规则)
+  * [声明顺序](#声明顺序)
+  * [例外格式](#例外格式)
+    * [前置属性](#前置属性)
+    * [单条声明规则](#单条声明规则)
+  * [友好可读性](#友好可读性)
+    * [注释](#注释)
+    * [Class名](#Class名)
+    * [选择器](#选择器)
+  * [组织](#组织)
 * [Writing copy](#copy)
   * [Sentence case](#sentence-case)
 
@@ -36,11 +36,11 @@ Standards for developing flexible, durable, and sustainable HTML and CSS.
 
 
 
-## Golden rule
+## 黄金准则
 
-> All code in any code base should look like a single person typed it, no matter how many people contributed.
+> 所有的代码库中代码无论是多少人的成果，都应该看起来是一个人写的。
 
-This means strictly enforcing these agreed upon guidelines at all times. For additions or contributions, please [file an issue on GitHub](https://github.com/markdotto/code-guide).
+这就意味着要时刻严格的执行规约中的条款。添加或者修正，请[在Github上作为一个议题](https://github.com/markdotto/code-guide)。
 
 
 
@@ -51,14 +51,14 @@ This means strictly enforcing these agreed upon guidelines at all times. For add
 ## HTML
 
 
-### HTML syntax
+### HTML句法
 
-* Use soft-tabs with two spaces
-* Nested elements should be indented once (2 spaces)
-* Always use double quotes, never single quotes
-* Don't include a trailing slash in self-closing elements
+* 使用两个空格作为缩进
+* 子元素应该缩进一次（两空格）
+* 只使用双引号，不要使用单引号
+* 在闭合元素后不要使用斜杠
 
-**Incorrect example:**
+**反例:**
 
 ````html
 <!DOCTYPE html>
@@ -73,7 +73,7 @@ This means strictly enforcing these agreed upon guidelines at all times. For add
 </html>
 ````
 
-**Correct example:**
+**正例:**
 
 ````html
 <!DOCTYPE html>
@@ -89,38 +89,38 @@ This means strictly enforcing these agreed upon guidelines at all times. For add
 ````
 
 
-### HTML5 doctype
+### HTML5文档类型
 
-Enforce standards mode in every browser possible with this simple doctype at the beginning of every HTML page.
+在每个HTML页面头部使用基本文件类型以强制使用浏览器的标准模式
 
 ````html
 <!DOCTYPE html>
 ````
 
 
-### Pragmatism over semantics
+### 实用语义
 
-Strive to maintain HTML standards and semantics, but don't sacrifice pragmatism. Use the least amount of markup with the fewest intricies whenever possible.
+尽量让HTML标准并且符合语义，不过不要牺牲实用性。在任何可能的时候都使用最少的标签以及内容。
 
 
-### Attribute order
+### 属性顺序
 
-HTML attributes should come in this particular order for easier reading of code.
+HTML属性应该以特定的顺序排序以增加代码的可读性。
 
 * class
 * id
 * data-*
 * for|type|href
 
-Such that your markup looks like:
+你的标签应该像这样:
 
 ````html
 <a class="" id="" data-modal="" href="">Example link</a>
 ````
 
-### JavaScript generated markup
+### JavaScript生成标签
 
-Writing markup in a javascript file makes the content harder to find, harder to edit, and less performant. Don't do it.
+在JavaScript文件中写标签会让其内容难以检索，难以编辑并且低效。所以不要这么做。
 
 
 
@@ -130,23 +130,23 @@ Writing markup in a javascript file makes the content harder to find, harder to 
 
 ## CSS
 
-### CSS syntax
+### CSS规则
 
-* Use soft-tabs with two spaces
-* When grouping selectors, keep individual selectors to a single line
-* Include one space before the opening brace of declaration blocks
-* Place closing braces of declaration blocks on a new line
-* Include one space after <code>:</code> in each property
-* Each declaration should appear on its own line
-* End all declarations with a semi-colon
-* Comma-separated values should include a space after each comma
-* Don't include spaces after commas in RGB or RGBa colors, and don't preface values with a leading zero
-* Lowercase all hex values, e.g., <code>#fff</code> instead of <code>#FFF</code>
-* Use shorthand hex values where available, e.g., <code>#fff</code> instead of <code>#ffffff</code>
-* Quote attribute values in selectors, e.g., <code>input[type="text"]</code>
-* Avoid specifying units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>
+* 使用两个空格作为缩进
+* 当组合选择器时，保持每项的选择器在不同行
+* 声明段中的左花括号前应该有一个空格
+* 声明段中的右花括号应该另起一行
+* 任何属性的 <code>:</code> 后都应有个空格
+* 每个声明都应该单独分行
+* 每个声明都应该以分号结尾
+* 逗号分割的值都应该在逗号后有一个空格
+* 不要再RGB或者RGBa颜色的逗号后添加空格，不要在值前加0
+* 小写所有的hex值，例如, <code>#fff</code> 而不是 <code>#FFF</code>
+* 计量使用简写方式，例如, <code>#fff</code> 而非 <code>#ffffff</code>
+* 用引号引起选择其中的值，例如, <code>input[type="text"]</code>
+* 避免给0值使用指定单位，例如, <code>margin: 0;</code> 而非 <code>margin: 0px;</code>
 
-**Incorrect example:**
+**反例:**
 
 ````css
 .selector, .selector-secondary, .selector[type=text] {
@@ -157,7 +157,7 @@ Writing markup in a javascript file makes the content harder to find, harder to 
 }
 ````
 
-**Correct example:**
+**正例:**
 
 ````css
 .selector,
@@ -170,12 +170,12 @@ Writing markup in a javascript file makes the content harder to find, harder to 
 }
 ````
 
-Questions on the terms used here? See the [syntax section of the Cascading Style Sheets article](http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax) on Wikipedia.
+对这里使用的条款有任何问题？参见维基百科[层叠样式表书写规则](http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax)词条
 
 
-### Declaration order
+### 声明顺序
 
-Related declarations should be grouped together, placing positioning and box-model properties closest to the top, followed by typographic and visual properties.
+相关的声明应该排列在一起，将位置以及盒模型属性排列在最上边，之后是样式以及显示属性
 
 ````css
 .declaration-order {
@@ -209,16 +209,16 @@ Related declarations should be grouped together, placing positioning and box-mod
 }
 ````
 
-For a complete list of properties and their order, please see [Recess](http://twitter.github.com/recess).
+完整的属性顺序，请参见[Recess](http://twitter.github.com/recess)。
 
 
-### Formatting exceptions
+### 例外格式
 
-In some cases, it makes sense to deviate slightly from the default [syntax](#css-syntax).
+在某些情况下，明显不按照默认的[规则](#CSS规则)也很有必要。
 
-#### Prefixed properties
+#### 前置属性
 
-When using vendor prefixed properties, indent each property such that the value lines up vertically for easy multi-line editing.
+当使用一些厂商前置属性时，缩进每个属性以使值竖列垂直从而方便编辑
 
 ````css
 .selector {
@@ -230,9 +230,9 @@ When using vendor prefixed properties, indent each property such that the value 
 
 In Textmate, use **Text &rarr; Edit Each Line in Selection** (&#8963;&#8984;A). In Sublime Text 2, use **Selection &rarr; Add Previous Line** (&#8963;&#8679;&uarr;) and **Selection &rarr;  Add Next Line** (&#8963;&#8679;&darr;).
 
-#### Rules with single declarations
+#### 单条声明规则
 
-In instances where several rules are present with only one declaration each, consider removing new line breaks for readability and faster editing.
+在实际中，当多个规则都仅存在一个单个声明的时候，考虑为了易读和便于编辑而不使用换行。
 
 ````css
 .span1 { width: 60px; }
@@ -251,15 +251,15 @@ In instances where several rules are present with only one declaration each, con
 ````
 
 
-### Human readable
+### 友好可读性
 
-Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others.
+代码由人编写跟维护。确保你的代码叙述清楚，有良好的注释以及对别人易于上手
 
-#### Comments
+#### 注释
 
-Great code comments convey context or purpose and should not just reiterate a component or class name.
+良好的注释可以传递背景或者目的，不要仅仅重申一个元素或者类名
 
-**Bad example:**
+**反例:**
 
 ````css
 /* Modal header */
@@ -268,7 +268,7 @@ Great code comments convey context or purpose and should not just reiterate a co
 }
 ````
 
-**Good example:**
+**正例:**
 
 ````css
 /* Wrapping element for .modal-title and .modal-close */
@@ -277,15 +277,15 @@ Great code comments convey context or purpose and should not just reiterate a co
 }
 ````
 
-#### Class names
+#### Class名
 
-* Keep classes lowercase and use dashes (not underscores or camelCase)
-* Avoid arbitrary shorthand notation
-* Keep classes as short and succinct as possible
-* Use meaningful names; use structural or purposeful names over presentational
-* Prefix classes based on the closest parent component's base class
+* 保持类名小写并且使用破折号（不要使用下划线和驼峰写法）
+* 避免使用随意的简写
+* 保持类名尽量短
+* 使用有意义的名字，要看上去有结构性跟目的性
+* 类名前置需要基于最邻近父元素的类名
 
-**Bad example:**
+**反例:**
 
 ````css
 .t { ... }
@@ -293,7 +293,7 @@ Great code comments convey context or purpose and should not just reiterate a co
 .header { ... }
 ````
 
-**Good example:**
+**正例:**
 
 ````css
 .tweet { ... }
@@ -301,13 +301,13 @@ Great code comments convey context or purpose and should not just reiterate a co
 .tweet-header { ... }
 ````
 
-#### Selectors
+#### 选择器
 
-* Use classes over generic element tags
-* Keep them short and limit the number of elements in each selector to three
-* Scope classes to the closest parent when necessary (e.g., when not using prefixed classes)
+* 在通用的标签中使用类
+* 保持选择器选择元素最多不超过三个
+* 必要时通过最近父元素来范围定义类（例如不适用前置类时）
 
-**Bad example:**
+**反例:**
 
 ````css
 span { ... }
@@ -315,7 +315,7 @@ span { ... }
 .avatar { ... }
 ````
 
-**Good example:**
+**正例:**
 
 ````css
 .avatar { ... }
@@ -323,11 +323,11 @@ span { ... }
 .tweet .avatar { ... }
 ````
 
-### Organization
+### 组织
 
-* Organize sections of code by component
-* Develop a consistent commenting hierarchy
-* If using multiple CSS files, break them down by component
+* 通过组成部分来组织代码
+* 制定一个一致的注释层次结构
+* 如果使用多个CSS文件，通过组成部分来分割他们
 
 
 
